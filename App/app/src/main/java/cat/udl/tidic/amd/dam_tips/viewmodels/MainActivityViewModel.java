@@ -13,6 +13,8 @@ public class MainActivityViewModel {
         return !token.equals("");
     }
 
+
+
 }
 
 

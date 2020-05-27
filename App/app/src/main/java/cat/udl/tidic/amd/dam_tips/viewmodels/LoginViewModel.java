@@ -48,6 +48,10 @@ public class LoginViewModel {
         this.accountRepo.createTokenUser();
     }
 
+    public void logout(){
+        this.accountRepo.deleteTokenUser();
+    }
+
 
     public MutableLiveData<String> getResponseLogin() {
         return this.accountRepo.getmResponseLogin();

@@ -14,7 +14,6 @@ import cat.udl.tidic.amd.dam_tips.viewmodels.MainActivityViewModel;
 
 public class MainActivity extends CustomActivty {
 
-    //protected final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +31,5 @@ public class MainActivity extends CustomActivty {
         }
     }
 
-//    public void goTo(Class _class){
-//        Intent intent = new Intent(this, _class);
-//        startActivity(intent);
-//    }
 
 }
