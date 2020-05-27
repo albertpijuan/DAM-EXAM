@@ -31,4 +31,5 @@
 
 És possible crear una nova categoria sense fer cap modificació a l'API? Justifica la resposta.
 
+Quins avantatges té fer anar l'API vs no fer-ho, per mostrar el nº de preguntes creades per cada usuari?
 
