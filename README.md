@@ -30,6 +30,7 @@
 ## Place to answers the questions (if your tasks contain questions to answer)
 
 És possible crear una nova categoria sense fer cap modificació a l'API? Justifica la resposta.
-
+- No, ja que cada cop que executes l'API es restauren totes les dades locals i perdíem tota l'estona la nova categoria, ja que només es guardaria de forma local i a la api no estaria mai inclosa.
 Quins avantatges té fer anar l'API vs no fer-ho, per mostrar el nº de preguntes creades per cada usuari?
+- Les dades queden guardades de forma molt més ordenada en les taules de l'API i resulta molt més fàcil contar el nombre de preguntes creades i també com ja he comentat abans pel tema de poder guardar el numero si es restaura l'app es perdran dades.
 
