@@ -13,6 +13,9 @@ import retrofit2.http.POST;
 
 public interface AccountDAO {
 
+    @POST("/questions/post/")
+    Call<Void> postQuestion(@Header ("Authorization") String tokenAuth,
+                          @Body Question favour);
 
 
     @POST("account/create_token")

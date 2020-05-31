@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import cat.udl.tidic.amd.dam_tips.R;
 import cat.udl.tidic.amd.dam_tips.viewmodels.LoginViewModel;
@@ -17,15 +18,38 @@ public class DashboardActivity extends CustomActivty {
 
     private Button disconnect;
     private LoginViewModel loginViewModel;
+    private CardView admin;
+    private int contador = 0;
+    private TextView Resultat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         initView();
+        Resultat = findViewById(R.id.contador_questions);
+
+        try{
+            Bundle extras = getIntent().getExtras();
+            int i = extras.getInt("contador");
+            contador = i;
+            Resultat.setText(String.valueOf(i));
+
+        }catch (Exception e){
+
+            System.out.println(e);
+        }
+
+        admin = findViewById(R.id.cardViewRanking);
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashboardActivity.this, AdminActivity.class);
+                intent.putExtra("contador",contador);
+                startActivity(intent);
+            }
+        });
     }
-
-
 
     protected void initView(){
         loginViewModel = new LoginViewModel();
@@ -46,8 +70,17 @@ public class DashboardActivity extends CustomActivty {
             }
         });
 
-    }
+        admin = findViewById(R.id.cardViewAdmin);
+        admin.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (v.getContext(), AdminActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });
+
+    }
 
     @Override
     public void onBackPressed(){
